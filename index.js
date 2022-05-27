@@ -37,7 +37,7 @@ const dbURL = process.env.dbURL;
 mongoose.connect( dbURL, { useNewUrlParser: true, useUnifiedTopology:true } )
     .then( console.log('Connected to database') )
     .catch( (err) => { console.log(err) } )
-    app.listen( 3080 , () => {
+    app.listen( process.env.PORT || 3080 , () => {
         console.log('Server is running')
     }
 );
