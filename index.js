@@ -27,6 +27,8 @@ app.use(morgan('common'));
 const bodyParser = require('body-parser'); 
 app.use(bodyParser.json()); 
 
+app.use(favicon(__dirname + '/public/favicon.png'));
+
 // Routes
 app.use('/auth', authRoute);
 app.use('/announcements', ancRoute);
@@ -41,3 +43,4 @@ mongoose.connect( dbURL, { useNewUrlParser: true, useUnifiedTopology:true } )
         console.log('Server is running')
     }
 );
+
