@@ -27,6 +27,9 @@ app.use(morgan('common'));
 const bodyParser = require('body-parser'); 
 app.use(bodyParser.json()); 
 
+var publicDir = __dirname + "/public";
+app.use(express.static(publicDir));
+
 app.use(favicon(__dirname + '/public/favicon.png'));
 
 // Routes
