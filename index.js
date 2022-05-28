@@ -1,4 +1,4 @@
-// importing all dependencies 
+// importing all dependencies
 const express = require('express');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
@@ -12,9 +12,10 @@ const app = express();
 
 var cors = require('cors');
 var corsOptions = {
-    origin : "*", 
+    origin : "https://fa-intranet.herokuapp.com/", 
     optionsSuccessStatus : 200 
 }
+
 
 app.use(cors(corsOptions))
 app.options('*', cors())
