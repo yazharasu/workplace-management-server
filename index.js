@@ -12,7 +12,7 @@ const app = express();
 
 var cors = require('cors');
 var corsOptions = {
-    origin : "https://fa-intranet.herokuapp.com/", 
+    origin : "'https://fa-intranet.netlify.app/", 
     optionsSuccessStatus : 200 
 }
 
