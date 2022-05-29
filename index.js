@@ -22,7 +22,9 @@ app.options('*', cors())
 
 var publicDir = __dirname + "/public";
 app.use(express.static(publicDir));
-app.use(favicon(__dirname + '/public/favicon.png'));
+// app.use(favicon(__dirname + '/public/favicon.png'));
+app.use('/favicon.ico', express.static('./public/favicon.png') );
+
 
 // middlewares
 app.use(express.json());
