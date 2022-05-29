@@ -154,7 +154,6 @@ router.patch( '/logout', async (req, res) => {
 router.get( '/checkEmail', async (req, res) => {
     try{
         const user = await Company.findOne( { "employees.email": req.body.email } )
-        res.json(user)
         if( user[0].employees ) {
             res.json('Already available')
         } else {
