@@ -35,7 +35,7 @@ app.use(favicon(__dirname + '/public/favicon.png'));
 // Routes
 app.use('/auth', authRoute);
 app.use('/announcements', ancRoute);
-app.get('/', (req, res) => { res.send('Hello from Express!')
+app.get('/', (req, res) => { res.send('Hello from Express!') } )
 
 
 // connecting to mongoDB
@@ -48,4 +48,3 @@ mongoose.connect( dbURL, { useNewUrlParser: true, useUnifiedTopology:true } )
         console.log('Server is running')
     }
 );
-
