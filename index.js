@@ -20,6 +20,10 @@ var corsOptions = {
 app.use(cors(corsOptions))
 app.options('*', cors())
 
+var publicDir = __dirname + "/public";
+app.use(express.static(publicDir));
+app.use(favicon(__dirname + '/public/favicon.png'));
+
 // middlewares
 app.use(express.json());
 app.use(helmet( {crossOriginResourcePolicy: false} ));
@@ -28,9 +32,6 @@ app.use(morgan('common'));
 const bodyParser = require('body-parser'); 
 app.use(bodyParser.json()); 
 
-var publicDir = __dirname + "/public";
-app.use(express.static(publicDir));
-app.use(favicon(__dirname + '/public/favicon.png'));
 
 // Routes
 app.use('/auth', authRoute);
