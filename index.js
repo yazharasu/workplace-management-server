@@ -13,7 +13,7 @@ dotenv.config();
 const app = express();
 
 var corsOptions = {
-    origin : "https://fa-intranet.netlify.app", 
+    origin : ['http://localhost:3080', 'https://fa-intranet.netlify.app'],
     optionsSuccessStatus : 200 
 }
 
