@@ -6,13 +6,14 @@ const morgan = require('morgan');
 const dotenv = require('dotenv');
 const ancRoute = require('./routes/announcements');
 const authRoute = require('./routes/auth');
+var cors = require('cors');
+
 
 dotenv.config();
 const app = express();
 
-var cors = require('cors');
 var corsOptions = {
-    origin : "https://fa-intranet.netlify.app/", 
+    origin : "https://fa-intranet.netlify.app", 
     optionsSuccessStatus : 200 
 }
 
@@ -29,7 +30,6 @@ app.use(bodyParser.json());
 
 var publicDir = __dirname + "/public";
 app.use(express.static(publicDir));
-
 app.use(favicon(__dirname + '/public/favicon.png'));
 
 // Routes
